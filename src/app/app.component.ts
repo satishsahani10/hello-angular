@@ -10,7 +10,7 @@ import { CounterComponent } from './counter/counter.component'
 export class AppComponent implements OnInit {
   @ViewChild(CounterComponent)
   counterComponent: CounterComponent
-  
+
   title = 'app';
   comments = [
     {
@@ -44,5 +44,9 @@ export class AppComponent implements OnInit {
       ]
       this.loading = false;
     }, 3000)
+  }
+  toggle = false;
+  updateToggle() {
+    this.toggle = !this.toggle;
   }
 }
