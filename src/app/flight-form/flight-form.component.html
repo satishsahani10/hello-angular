@@ -1,8 +1,18 @@
 <form>
   <div class="form-group">
     <label for="fullName">Full Name</label>
-    <input type="text" class="form-control" [(ngModel)]="flightModel.fullName" name="fullName"> {{flightModel.fullName}}
+    <input type="text" class="form-control" [(ngModel)]="flightModel.fullName" name="fullName" #name="ngModel" required minlength="6">
+    {{flightModel.fullName}}
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name must be at least 6 characters long.
+      </div>
+    </div>
   </div>
+
   <div class="row">
     <div class="col-md-6">
       <label for="from">From</label>
