@@ -1,0 +1,14 @@
+<!-- <a href="#" class="list-group-item" (dblclick)="removeComment(comment)" *ngFor="let comment of comments">
+  <h4 class="list-group-item-heading">{{comment.author}}</h4>
+  <p class="list-group-item-text">{{comment.content}}</p>
+  </a> -->
+
+<div class="list-group">
+  <a href="#" class="list-group-item" (dblclick)="removeComment(comment)" *ngFor="let comment of comments" (click)="showComment(comment)">
+    <h4 class="list-group-item-heading">{{comment.author}}</h4>
+    <!-- <p class="list-group-item-text">{{comment.content}}</p> -->
+  </a>
+</div>
+<button class="btn btn-primary" (click)="showPrompt()">Add Comment</button>
+<!-- <app-comment-item *ngFor="let comment of comments" [comment]="comment" (dblclick)="showComment(comment)">
+</app-comment-item> -->
