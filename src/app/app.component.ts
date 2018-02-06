@@ -26,6 +26,20 @@ export class AppComponent implements OnInit {
       content: 'Got stuck passing data around'
     }
   ];
+  comments1 = [
+    {
+      author: 'Jay Kay',
+      content: 'TypeScript makes Angular awesome'
+    },
+    {
+      author: 'William',
+      content: 'Yeah, right!'
+    },
+    {
+      author: 'Raphael',
+      content: 'Got stuck passing data around'
+    }
+  ];
   onShowComment(comment) {
     alert(comment.content);
   };

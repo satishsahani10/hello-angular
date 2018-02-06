@@ -50,7 +50,10 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <a routerLink="/">Home</a>
+            <a routerLink="/">API Todos</a>
+          </li>
+          <li>
+            <a routerLink="/home">Home</a>
           </li>
           <li>
             <a routerLink="/about">About</a>
@@ -63,10 +66,14 @@
     </div>
   </nav>
   <div class="container">
-    <router-outlet></router-outlet>
+    <div style="text-align:center">
+      <h1>
+        Welcome to {{ title }}!
+      </h1>
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>
-<!-- <div class="container">
+  <!-- <div class="container">
   <div class="row">
     <div class="col-md-6">
       <h3 style="text-align:center" *appWhen="toggle">Hi, cute directive</h3>
