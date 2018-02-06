@@ -1,8 +1,7 @@
-<form>
+<form #flightForm="ngForm" (ngSubmit)="handleSubmit()">
   <div class="form-group">
     <label for="fullName">Full Name</label>
     <input type="text" class="form-control" [(ngModel)]="flightModel.fullName" name="fullName" #name="ngModel" required minlength="6">
-    {{flightModel.fullName}}
     <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
       <div *ngIf="name.errors.required">
         Name is required.
@@ -54,11 +53,17 @@
     </div>
     <div class="col-md-4">
       <label for="children">Children</label>
-      <input type="number" id="children" class="form-control" [(ngModel)]="flightModel.children" name="">
+      <input type="number" id="children" class="form-control" [(ngModel)]="flightModel.children" name="children">
     </div>
     <div class=" col-md-4 ">
       <label for="infants ">Infants</label>
-      <input type="number " id="infants " class="form-control " [(ngModel)]="flightModel.infants " name="">
+      <input type="number " id="infants" class="form-control " [(ngModel)]="flightModel.infants " name="infants">
     </div>
+  </div>
+
+  <div class="form-group" style="margin-top: 15px">
+    <button class="btn btn-primary btn-block" [disabled]="!flightForm.form.valid">
+      Submit
+    </button>
   </div>
 </form>
