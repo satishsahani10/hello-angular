@@ -32,6 +32,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { TodosComponent } from './todos/todos.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { TodosComponent } from './todos/todos.component';
     ContactComponent,
     HomeComponent,
     PostComponent,
-    TodosComponent
+    TodosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

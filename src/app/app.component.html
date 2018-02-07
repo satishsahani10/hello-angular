@@ -1,62 +1,23 @@
-<!--Add tab component to app-->
-<!-- <app-tab></app-tab>
-<div style="text-align:center">
-  <h1> This is parent component </h1>
-  <app-child></app-child>
-</div> -->
 
-<!-- <div>
-  <h2>Comments</h2>
-  <app-comment-list [comments]="comments" (onShowComment)="onShowComment($event)">
-  </app-comment-list>
-</div> -->
-
-<!-- <h2>Counter</h2>
-<app-counter #counter></app-counter>
-<div class="btn btn-primary" (click)="counter.increment()">
-  Increment
-</div>
-<div class="btn btn-danger" (dblclick)="counter.decrement()">
-  Decrement
-</div>
-<br>
-<br>
-<div class="btn btn-primary" (click)="counterComponent.increment()">
-  Increment
-</div>
-<div class="btn btn-danger" (dblclick)="counterComponent.decrement()">
-  Decrement
-</div> -->
-
-<!-- <div class="container">
-  <h2 class="text-center">TS Comments</h2>
-  <div class="col-md-4 col-md-offset-2">
-    <app-comment-list></app-comment-list>
-  </div>
-  <div class="col-md-4">
-    <app-comment-detail></app-comment-detail>
-  </div>
-</div> -->
-
-<!-- <div class="container">
-  <h3 class="text-center">Book a Flight</h3>
-  <div class="col-md-offset-3 col-md-6">
-    <app-flight-form></app-flight-form>
-  </div>
-</div> -->
 <div>
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <a routerLink="/">Home</a>
+            <a routerLink="/">Login</a>
+          </li>
+          <li>
+            <a routerLink="/home">Home</a>
           </li>
           <li>
             <a routerLink="/about">About</a>
           </li>
           <li>
             <a routerLink="/contact">Contact</a>
+          </li>
+          <li>
+            <a routerLink="/counter">Counter</a>
           </li>
           <li>
             <a routerLink="/flight-form">Flight Booking</a>
@@ -66,6 +27,9 @@
           </li>
           <li>
             <a routerLink="/todos">API Todos</a>
+          </li>
+          <li>
+            <a routerLink="/login">Login</a>
           </li>
         </ul>
       </div>
@@ -79,17 +43,4 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-  <!-- <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h3 style="text-align:center" *appWhen="toggle">Hi, cute directive</h3>
-      <button appUiButton bgColor="red" (click)="updateToggle()">Click!!</button>
-      <h2>{{0.5 | percent}}</h2>
-    </div>
-    <div class="col-md-6">
-      <h3>{{'this is uppercase' | uppercase}}</h3>
-      <h2>{{50.989 | currency:'EUR':true}}</h2>
-      <h3>{{'watch me flip' | reverse:true}}</h3>
-    </div>
-  </div>
-</div> -->
+</div>

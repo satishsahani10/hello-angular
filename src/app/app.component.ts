@@ -8,8 +8,6 @@ import { CounterComponent } from './counter/counter.component'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  @ViewChild(CounterComponent)
-  counterComponent: CounterComponent
 
   title = 'app';
   comments = [
@@ -44,20 +42,7 @@ export class AppComponent implements OnInit {
     alert(comment.content);
   };
   items: Array<string> = [];
-  loading: boolean = false;
   ngOnInit() {
-    this.loading = true;
-    setTimeout(() => {
-      this.items = [
-        'Pen',
-        'Note',
-        'Mug',
-        'Charger',
-        'Passport',
-        'Keys'
-      ]
-      this.loading = false;
-    }, 3000)
   }
   toggle = false;
   updateToggle() {

@@ -7,12 +7,18 @@ import { TodosComponent } from './todos/todos.component';
 import { FlightFormComponent } from './flight-form/flight-form.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { CommentDetailComponent } from './comment-detail/comment-detail.component';
+import { CounterComponent } from './counter/counter.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'login',
         pathMatch: 'full'
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: 'todos',
@@ -45,5 +51,9 @@ export const routes: Routes = [
     {
         path: 'comment-detail',
         component: CommentDetailComponent
+    },
+    {
+        path: 'counter',
+        component: CounterComponent
     }
 ];
