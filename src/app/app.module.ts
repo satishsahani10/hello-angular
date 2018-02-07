@@ -7,7 +7,7 @@ import { CommentService } from './comment.service';
 import { BlogService } from './blog.service';
 import { TodosService } from './todos.service';
 //Import RuterModule
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 // Import the form module
 import { FormsModule } from '@angular/forms';
 

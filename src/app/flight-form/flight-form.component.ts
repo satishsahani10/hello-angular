@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Flight } from '../flight';
+import { ActivatedRoute } from '@angular/router';
+import { debuglog } from 'util';
 
 @Component({
   selector: 'app-flight-form',
@@ -17,7 +19,7 @@ export class FlightFormComponent implements OnInit {
     'London',
     'Nairobi'
   ];
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.flightModel = new Flight('', '', '', '', 0, new Date(), 0, 0, new Date());
   }
   ngOnInit() {

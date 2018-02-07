@@ -4,11 +4,14 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { TodosComponent } from './todos/todos.component';
+import { FlightFormComponent } from './flight-form/flight-form.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
+import { CommentDetailComponent } from './comment-detail/comment-detail.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'todos',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
     {
@@ -30,5 +33,17 @@ export const routes: Routes = [
     {
         path: 'contact',
         component: ContactComponent
+    },
+    {
+        path: 'flight-form',
+        component: FlightFormComponent
+    },
+    {
+        path: 'comment-list',
+        component: CommentListComponent
+    },
+    {
+        path: 'comment-detail',
+        component: CommentDetailComponent
     }
 ];
