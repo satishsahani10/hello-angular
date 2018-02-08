@@ -1,59 +1,97 @@
 import { Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { PostComponent } from './post/post.component';
-import { TodosComponent } from './todos/todos.component';
-import { FlightFormComponent } from './flight-form/flight-form.component';
-import { CommentListComponent } from './comment-list/comment-list.component';
-import { CommentDetailComponent } from './comment-detail/comment-detail.component';
-import { CounterComponent } from './counter/counter.component';
-import { LoginComponent } from './login/login.component';
+import { AppComponent } from './app.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { PostComponent } from './components/post/post.component';
+import { TodosComponent } from './components/todos/todos.component';
+import { FlightFormComponent } from './components/flight-form/flight-form.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { CommentDetailComponent } from './components/comment-detail/comment-detail.component';
+import { CounterComponent } from './components/counter/counter.component';
+import { LoginComponent } from './components/login/login.component';
+import { TabComponent } from './components/tab/tab.component';
+import { CommentItemComponent } from './components/comment-item/comment-item.component';
+import { AuthGuard } from './services/auth.guard';
 
 export const routes: Routes = [
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    },
     {
         path: 'login',
         component: LoginComponent
     },
     {
-        path: 'todos',
-        component: TodosComponent
-    },
-    {
         path: 'home',
-        component: HomeComponent
-    },
-    {
-        path: 'post/:id',
-        component: PostComponent
-    },
-    {
-        path: 'about',
-        component: AboutComponent
-    },
-    {
-        path: 'contact',
-        component: ContactComponent
-    },
-    {
-        path: 'flight-form',
-        component: FlightFormComponent
+        component: HomeComponent,
+        //canActivate: [AuthGuard],
+        children: [
+            {
+                path: 'tab',
+                component: TabComponent
+                //,canActivate: [AuthGuard]
+            }
+        ]
     },
     {
         path: 'comment-list',
-        component: CommentListComponent
-    },
-    {
-        path: 'comment-detail',
-        component: CommentDetailComponent
+        component: CommentListComponent,
+        children: [
+            {
+                path: 'comment-detail', 
+                component: CommentDetailComponent
+                //,canActivate: [AuthGuard]
+            },
+            {
+                path: 'comment-item', 
+                component: CommentItemComponent
+                //,canActivate: [AuthGuard]
+            }
+        ]
     },
     {
         path: 'counter',
         component: CounterComponent
+        // ,
+        // canActivate: [AuthGuard]
+    },
+    {
+        path: 'flight-form',
+        component: FlightFormComponent
+        // ,
+        // canActivate: [AuthGuard]
+    },
+    {
+        path: 'post/:id',
+        component: PostComponent
+        // ,
+        // canActivate: [AuthGuard]
+    },
+    {
+        path: 'todos',
+        component: TodosComponent
+        // ,
+        // canActivate: [AuthGuard]
+    },
+    {
+        path: 'about',
+        component: AboutComponent
+        // ,
+        // canActivate: [AuthGuard]
+    },
+    {
+        path: 'contact',
+        component: ContactComponent
+        // ,
+        // canActivate: [AuthGuard]
+    },
+    {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+        // ,
+        // canActivate: [AuthGuard]
+    },
+    {
+        path: '**',
+        redirectTo: 'login'
     }
 ];

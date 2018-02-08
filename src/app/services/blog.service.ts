@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as rawData from './db.json';
+import * as rawData from '../json-data/db.json';
 @Injectable()
 export class BlogService {
   data = <any>rawData;

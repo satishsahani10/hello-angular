@@ -1,6 +1,6 @@
 //import { Component, OnInit } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CounterComponent } from './counter/counter.component'
+import { CounterComponent } from './components/counter/counter.component'
 
 @Component({
   selector: 'app-root',

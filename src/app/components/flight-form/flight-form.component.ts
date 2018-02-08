@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Flight } from '../flight';
+import { Flight } from '../../models/flight';
 import { ActivatedRoute } from '@angular/router';
 import { debuglog } from 'util';
 
